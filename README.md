@@ -16,7 +16,7 @@
 - All filters are optional and composable.
 - The API always returns stable, predictable responses.
 
-# 📚 Books API (Node.js + MongoDB)
+#  Books API (Node.js + MongoDB)
 
 A minimal and well-structured **Books API** built using **Node.js, Express, and MongoDB**, supporting book creation and advanced exploration with search, filters, pagination, and sorting.
 
@@ -24,7 +24,7 @@ This project is implemented as part of a backend interview task.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Create a book
 - Explore books with:
@@ -49,7 +49,7 @@ This project is implemented as part of a backend interview task.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 src/
 ├── config/
@@ -134,7 +134,7 @@ Example:
 
 Validation errors return 400 with an `errors` array describing issues.
 
-🔍 Explore Books
+Explore Books
 
 GET /api/books
 
@@ -175,7 +175,7 @@ This repository intentionally focuses on the interview task requirements (create
 
 ---
 
-## Production checklist ✅
+## Production checklist 
 
 - Provide a real `MONGO_URI` and set `NODE_ENV=production` in your environment (or use secrets in your container/orchestration platform).
 - Use a process manager (PM2 / systemd) or containers + orchestrator to run the app reliably.
