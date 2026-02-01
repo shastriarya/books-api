@@ -4,7 +4,9 @@
   "description": "A RESTful Books API built with Node.js, Express, and MongoDB supporting search, filtering, sorting, and pagination.",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "start:prod": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/shastriarya/books-api/issues"
   },
-  "homepage": "https://github.com/shastriarya/books-api#readme"
+  "homepage": "https://github.com/shastriarya/books-api#readme",
+  "dependencies": {
+    "debug": "^4.4.3",
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.0.1",
+    "mongoose": "^9.1.5",
+    "path": "^0.12.7"
+  }
 }

@@ -1,0 +1,136 @@
+Create `src/docs/openapi.yaml`
+
+```yaml
+openapi: 3.0.0
+info:
+  title: Books API
+  description: Minimal Books API with search, filters, pagination and sorting
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /api/books:
+    post:
+      summary: Create a new book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookInput"
+      responses:
+        201:
+          description: Book created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+
+    get:
+      summary: Explore books
+      parameters:
+        - in: query
+          name: search
+          schema:
+            type: string
+        - in: query
+          name: author
+          schema:
+            type: string
+        - in: query
+          name: from
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: to
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - in: query
+          name: sortBy
+          schema:
+            type: string
+            enum: [name, author, publishDate]
+        - in: query
+          name: order
+          schema:
+            type: string
+            enum: [asc, desc]
+      responses:
+        200:
+          description: List of books
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  page:
+                    type: integer
+                  limit:
+                    type: integer
+                  total:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Book"
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        200:
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+components:
+  schemas:
+    BookInput:
+      type: object
+      required: [name, description, author]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        author:
+          type: string
+        publishDate:
+          type: string
+          format: date
+
+    Book:
+      allOf:
+        - $ref: "#/components/schemas/BookInput"
+        - type: object
+          properties:
+            _id:
+              type: string
+            createdAt:
+              type: string
+              format: date-time
+            updatedAt:
+              type: string
+              format: date-time

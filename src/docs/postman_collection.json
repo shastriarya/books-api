@@ -1,0 +1,45 @@
+{
+  "info": {
+    "_postman_id": "books-api-sample",
+    "name": "Books API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Clean Code\",\n  \"description\": \"A handbook of agile software craftsmanship\",\n  \"author\": \"Robert C. Martin\",\n  \"publishDate\": \"2008-08-01\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/books", "host": [ "http://localhost:3000" ], "path": [ "api", "books" ] }
+      },
+      "response": []
+    },
+    {
+      "name": "Explore Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/books?search=javascript&author=Kyle%20Simpson&page=1&limit=5&sortBy=publishDate&order=asc",
+          "host": [ "http://localhost:3000" ],
+          "path": [ "api", "books" ],
+          "query": [
+            { "key": "search", "value": "javascript" },
+            { "key": "author", "value": "Kyle Simpson" },
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "5" },
+            { "key": "sortBy", "value": "publishDate" },
+            { "key": "order", "value": "asc" }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

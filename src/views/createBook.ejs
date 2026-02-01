@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Create Book</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Create Book</h2>
+
+        <form action="/api/books" method="POST">
+
+            <input type="text" name="name" placeholder="Book Name" required />
+
+            <textarea name="description" placeholder="Book Description" maxlength="2000" required></textarea>
+
+            <input type="text" name="author" placeholder="Author Name" required />
+
+            <input type="date" name="publishDate" />
+
+            <button type="submit">Create Book</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
