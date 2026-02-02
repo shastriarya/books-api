@@ -39,7 +39,7 @@ This project is implemented as part of a backend interview task.
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Node.js**
 - **Express**
@@ -117,7 +117,7 @@ npm test
 
 A simple Postman collection is available at `src/docs/postman_collection.json`. Import it into Postman or Insomnia and update the host if needed.
 API Endpoints
-➕ Create Book
+ Create Book
 
 POST /api/books
 
@@ -186,4 +186,4 @@ This repository intentionally focuses on the interview task requirements (create
 
 ---
 
-If you want, I can add CI (GitHub Actions), a basic test suite, or switch to a structured logger (winston/pino). Tell me which you'd prefer next.
+
